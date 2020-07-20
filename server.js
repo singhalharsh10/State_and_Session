@@ -1,5 +1,6 @@
 const express = require('express')
 const expressSession = require('express-session')
+const e = require('express')
 const app = express()
 
 app.set('view engine', 'hbs')
@@ -14,10 +15,17 @@ app.use(expressSession({
 }))
 
 //makes statefull server but it will common to all users so it will be stateful to all users or server and not for specific user.Means it will record count not for secific user but for all ser
-let count = 0
+// let count = 0
 app.get('/', (req, res) => {
-    count++;
-    res.render('index', { count })
+    // count++;
+    // it exists when we write express-session code above wla
+    console.log(req.session)
+    if (!req.session.visits)
+        req.session.visits = 1
+    else
+        req.session.visits++
+        // it will make client specific
+        res.render('index', { count: req.session.visits })
 })
 
 
