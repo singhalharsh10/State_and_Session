@@ -1,0 +1,18 @@
+
+//below is the statefull server .As it depends on calls value and its value is globla
+
+let calls=0
+
+function fn(x){
+    return (2*x)+(++calls)
+}
+
+
+// Stateless State means we have to enter password every time when we login
+//State on refers to state when we not have to enter password
+
+
+//sysytem should have state in database
+
+
+//for making client spepcfic statefull server we nedd -COOKIES

@@ -1,0 +1,10 @@
+express-session -Cookie does not contain any information but it only hs id and server is the one which stores this information about personal information and it is more secure
+
+cookie-Session=== PersonalData is stored 
+
+both will make server statefull
+
+es=express-session
+cs-cookie-session
+
+if we use es ,then we need database to save the state
